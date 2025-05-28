@@ -1,0 +1,164 @@
+#displayContainer {
+    margin: auto;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#displayContainer a {
+    text-decoration: underline;
+}
+
+.display-item-description {
+    margin: 0 !important;
+}
+
+.display-item {
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.display-item-img {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 0rem auto 0;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+#displayContainer img {
+    padding: 0.5rem;
+}
+
+.text-visual-display {
+    font-size: calc(1rem + 0.3vw);
+    text-align: center;
+} 
+
+hr {
+    border: 2px dashed #ffffff;
+    border-style: none none dashed; 
+    color: transparent; 
+    background-color: transparent;
+}
+
+.display-item h3 {
+    font-size: 2rem;
+    padding-top: calc(0.9rem + 0.2vw);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+@media screen and (min-width: 900px) {
+    #displayContainer {
+        padding: 1rem;
+        min-width: 80%; 
+        max-height: 80vw; 
+    }
+
+    .full-screen-container {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.294);
+    }
+
+    .full-screen-container img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .codingImg {
+        max-height: 50vh;
+    }
+
+    .codingImg2 {
+        max-width: 45%;
+    }
+
+    .tall {
+        max-width: 45vw;
+    }
+    
+    .short {
+        max-height: 60vh;
+    }
+
+    .sketch-short {
+        max-height: 40vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .tall {
+        max-width: 80vw;
+    }
+    
+    .sketch-short {
+        max-width: 80vw;
+    }
+    
+    .short {
+        max-width: 80vw;
+    }
+
+    .display-item {
+        padding: 1rem;
+    }
+
+    .display-item h3 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    .codingImg {
+        width: 95%;
+    }
+
+    .codingImg2 {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 699px){
+    .codingImg {
+        width: 95%;
+    }
+
+    .codingImg2 {
+        width: 45%;
+    }
+}
+
+.p5 {
+  text-align: center !important;
+  padding: 0rem !important;
+  margin: 0 !important;
+}
+
+#displayContainer .translucent {
+  padding-left: 0.5rem;
+}
+
+
+.dark-translucent {
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.594);
+}
+
+.sliders {
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+.glow {
+    filter: drop-shadow(0 0 0.75rem rgb(60, 66, 240));
+}
+
+.websites div, .websites h3 {
+    padding: 0.6rem;
+}
