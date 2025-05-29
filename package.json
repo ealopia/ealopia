@@ -1,0 +1,24 @@
+{
+  "name": "ealopia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ealopia/ealopia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ealopia/ealopia/issues"
+  },
+  "homepage": "https://github.com/ealopia/ealopia#readme",
+  "description": "",
+  "devDependencies": {
+    "contentful": "^11.5.24",
+    "dotenv": "^16.5.0"
+  }
+}
