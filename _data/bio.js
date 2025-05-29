@@ -1,6 +1,6 @@
 import client from "./client.js";
 
-// returns a promise containing biographical info
+// returns a promise that resolves to biographical info
 export default async function () {
   try {
     const response = await client.getEntries({
