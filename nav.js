@@ -1,16 +1,33 @@
 const titleimg = "/static/e.png";
 const navItemsInfo = [ 
-  { name: "photo", link: "photography/"},
-  { name: "info", link: "about/" },
-  { name: "painting", link: "painting/" }
+  { name: "ABOUT", link: "about/" , expanded: []},
+  { name: "PHOTOGRAPHY", link: "", expanded: [ 
+    { name: "A-Ma", link: "/photography/a-ma/" }, 
+    { name: "Masks", link: "/photography/masks/" }, 
+    { name: "United we Bargain, Divided we Beg", link: "/photography/united-we-bargain-divided-we-beg" }, 
+    { name: "Youth Against", link: '/photography/youth-against' }
+  ] }
+  //{ name: "painting", link: "painting/", expanded: []}
 ];
 
 const navItemsHTML = () => {
   let navItemsStr = ''
   for (const navItem of navItemsInfo) {
-    const isActive = window.location.href.endsWith(navItem.link) ? 'active' : '';
-    navItemsStr += `
-    <a class="${isActive}" href="/${navItem.link}">${navItem.name}</a>`;
+    const isActive = window.location.href.includes(navItem.link) ? 'active' : '';
+    let expanded = ``;
+    for (const expandedItem of navItem.expanded) {
+      expanded += 
+      `<div> 
+          <a href="${expandedItem.link}"> 
+            ${expandedItem.name} 
+          </a> 
+      </div>`;
+    }
+    expanded = `<div class="smallDropDownContent"> ${expanded} </div>`;
+    navItemsStr += `<div class="smallDropDown">
+      <a class="${isActive}" href="/${navItem.link}"> ${navItem.name} </a>
+      ${expanded}
+    </div>`;
   }
   return navItemsStr;
 };
