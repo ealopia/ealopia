@@ -1,0 +1,40 @@
+#displayContainer {
+    margin: auto;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.img-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#displayContainer img {
+    margin: 0.5rem;
+    vertical-align: top;
+}
+
+@media screen and (min-width: 800px) {
+    #displayContainer {
+        min-width: 80%; 
+        padding-right: 1rem;
+        margin-right: 1rem;
+        border-right: 1px solid black;
+    }
+
+    .sketch-short {
+        max-height: 35vh;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .sketch-short {
+        max-width: 80vw;
+    }
+
+    .display-item {
+        margin: 1rem;
+    }
+}
