@@ -1,11 +1,14 @@
 {
   "name": "ealopia",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build": "npx eleventy",
     "start": "npx eleventy --serve && npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "lint": "npx eslint"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "repository": {
     "type": "git",
@@ -23,11 +26,14 @@
   "devDependencies": {
     "@eslint/js": "^9.27.0",
     "contentful": "^11.5.24",
-    "dotenv": "^16.5.0",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.2.0",
     "onchange": "^7.1.0",
     "prettier": "3.5.3"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "dotenv": "^16.5.0"
   }
 }

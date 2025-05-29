@@ -13,7 +13,6 @@ export default async function () {
 
     // extract link to CV
     mostRecentBio.cv = mostRecentBio.cv.fields.file.url;
-    console.log(mostRecentBio);
 
     return mostRecentBio;
   } catch (error) {
