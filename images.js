@@ -133,9 +133,11 @@ for (const image of page.images) {
 }
 
 let div = `
-<h1> ${page.title} </h1>
 <div class="flex-container">
-    <div> ${page.description} </div>
+    <div> 
+        <h1> ${page.title} </h1>
+        ${page.description} 
+    </div>
     <div id="displayContainer">
         <div class="display-item">
             <div class="img-flex-container">
@@ -151,3 +153,40 @@ document.querySelector('.content-child').innerHTML = div;
 $('.img-container').on( "click", function() { 
     $(this).add('.full-screen-container');
 });
+
+
+/*
+let div = `
+<h1> ${page.title} </h1>
+<div class="flex-container">
+    <div class=id="fullScreenImages">
+    
+        <div> ${carouselImages} </div>
+                <a class="carousel-control-prev" href="#fullScreenImages" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#fullScreenImages" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+`;
+
+document.querySelector('.content-child').innerHTML = div;
+
+$('.img-container').on( "click", function() { 
+    $(this).add('.full-screen-container');
+});
+
+// class="carousel slide" data-bs-ride="carousel"
+/*
+
+        <a class="carousel-control-prev" href="#fullScreenImages" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#fullScreenImages" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+*/
