@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx eleventy",
-    "start": "npx eleventy --serve && onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "start": "npx eleventy --serve && npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "lint": "npx eslint"
   },
   "repository": {
@@ -13,7 +13,7 @@
   },
   "type": "module",
   "keywords": [],
-  "author": "",
+  "author": "Aditi Khare and Julie Lam",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ealopia/ealopia/issues"

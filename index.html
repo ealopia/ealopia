@@ -1,7 +1,4 @@
 ---
-siteTitle: Ethan Lan
-longDescription: Ethan Lan (b. 2000) is a Taiwanese American visual artist specializing in photography and painting. Born to immigrant parents, Ethan's work delves into the complexities of cultural background, family ties, trauma, and justice. For him, these themes serve as a profound means of self-discovery and "becoming more myself."
-shortDescription: Ethan Lan (b. 2000) is a Taiwanese American visual artist specializing in photography and painting.
 authorNames: Aditi Khare and Julie Lam
 ---
 
@@ -14,15 +11,10 @@ authorNames: Aditi Khare and Julie Lam
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="index,follow" />
     <meta name="author" content="{{authorNames}}" />
-    <meta name="description" content="{{siteDescription}}" />
+    <meta name="description" content="{{bio.name}} {{bio.shortDescription}}" />
     <link rel="icon" href="static/e.png" />
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>{{siteTitle}}</title>
+    <title>{{bio.name}}</title>
 
     <!-- Renders Navigation -->
     <script src="/nav.js" defer></script>
@@ -56,19 +48,13 @@ authorNames: Aditi Khare and Julie Lam
     ></script>
   </head>
   <body>
-    <!--  -->
-    <!-- <div class="flex-2">
-      <div class="flex-2-item">
-         <div>
-          {{shortDescription}} -->
-    <!--  -->
     <div class="loader">loading...</div>
     <div class="content landing">
       <div id="navContainer"></div>
       <div class="content-child">
         <div>
-          <span class="h1">Ethan Lan </span> is a Taiwanese American visual
-          artist specializing in photography and painting.
+          <span class="h1">{{bio.name}}</span>
+          {{bio.shortDescription}}
         </div>
         <hr />
         <div class="work-container">
@@ -76,15 +62,15 @@ authorNames: Aditi Khare and Julie Lam
             <div class="work-title">Photography</div>
             <div>
               <ul>
-                <li><a href="/photography/youth-against"> A-ma</a></li>
-                <li><a href="/photography/youth-against"> Masks </a></li>
+                <li><a href="/photography/youth-against">A-ma</a></li>
+                <li><a href="/photography/youth-against">Masks</a></li>
                 <li>
                   <a href="/photography/youth-against">
                     United we Bargain, Divided we Beg
                   </a>
                 </li>
                 <li>
-                  <a href="/photography/youth-against"> Youth Against </a>
+                  <a href="/photography/youth-against">Youth Against</a>
                 </li>
               </ul>
             </div>
@@ -93,17 +79,10 @@ authorNames: Aditi Khare and Julie Lam
           <div class="work">
             <div class="work-title">Info</div>
             <ul>
-              <li><a href="/ealopia.pdf"> CV </a></li>
-              <li><a href="/about"> About </a></li>
+              <li><a href="{{bio.cv}}">CV</a></li>
+              <li><a href="/about">About</a></li>
             </ul>
             <hr />
-          </div>
-          <div>
-            Testing
-            <br />
-            <ul>
-              {{bio}}
-            </ul>
           </div>
         </div>
         <br />
