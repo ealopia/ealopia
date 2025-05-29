@@ -1,7 +1,6 @@
-const contentful = require("contentful");
+import { createClient } from "contentful";
 
-export default function () {
-  contentful.createClient({
+export default createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-})};
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});

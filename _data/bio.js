@@ -1,9 +1,16 @@
 import client from "./client.js";
 
-export async function loadBio() {
-    return client.getEntries({content_type: 'bio'}).then(response => {
-        console.log(response)
-    })
+export default async function () {
+  return client
+    .getEntries({ content_type: "bio", order: "sys.updatedAt" })
+    .then((response) => {
+      console.log("wassup");
+      console.log(response);
+      const bios = response.items.map((bio) => {
+        return bio.fields;
+      });
+      console.log(bios);
+    });
 }
 
 // module.exports = async () => {
