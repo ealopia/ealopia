@@ -40,11 +40,8 @@ body {
 }
 
 @keyframes flip {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
   }
 }
 
@@ -87,14 +84,27 @@ body {
 }
 
 /* Navigation grid */
-.nav {
-  top: 0;
-  margin: 0rem auto 0;
-  padding: 0rem;
-  background: var(--transparent);
-  color: var(--color-text) !important;
-  font-family: Px;
-}
+  .nav {
+    top: 0;
+    margin: 0rem auto 0;
+    padding: 0rem;
+    background: var(--transparent);
+    color: var(--color-text) !important;
+    font-family: Px;
+    margin-right: 2rem;
+  }
+  
+  .links {
+    width: 100vw;
+    display: flex;
+    font-weight: bold;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: calc(0.7rem + 0.7vw);
+    padding: calc(0.7rem + 0.3rem);
+  }
 
 .links {
   width: 100vw;
@@ -118,12 +128,20 @@ body {
 }
 
 /* Page titles */
+<<<<<<< HEAD
 .titleimg {
   height: calc(8rem + 0.3vw);
   margin: 0;
   padding: 0.5rem !important;
   animation: flip 4s 1 ease-in-out;
 }
+=======
+  .titleimg {
+    height: calc(8rem + 0.3vw);
+    margin: 0;
+    padding: 0.5rem !important;
+  }
+>>>>>>> main
 
 .landing .titleimg {
   animation: flip 4s infinite ease-in-out;
@@ -146,31 +164,55 @@ body {
   font-family: Px;
 }
 
-.dropDown .dropDownButton {
-  background: var(--transparent);
-  color: var(--color-text);
-  border: none;
-  font-size: 2.5rem;
-  position: absolute;
-  margin: 0 !important;
-  padding: 0 !important;
-  top: 5vh;
-  right: 5vw;
-}
+  .dropDownExpanded {
+    text-decoration: none;
+    text-align: left;
+    font-size: 1rem;
+  }
 
-.dropDown {
-  margin: 0;
-  width: 100vw;
-  position: absolute;
-  top: 0vh;
-  background-color: white;
-  border-bottom: 1px solid black;
-  z-index: 99;
-  justify-content: space-between;
-  margin: 0rem auto 0;
-  padding: 3rem 1rem 0.75rem 1rem;
-  animation: bounce-in-top 1s ease 1;
-}
+  .dropDown .dropDownButton {
+    background: var(--transparent);
+    color: var(--color-text);
+    border: none;
+    font-size: 2.5rem;
+    position: absolute;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 5vh;
+    right: 5vw;
+  }
+  
+  .dropDown {
+    margin: 0;
+    width: 100vw;
+    position: absolute;
+    top: 0vh;
+    background-color: white;
+    border-bottom: 1px solid black;
+    z-index: 99;
+    justify-content: space-between;
+    margin: 0rem auto 0;
+    padding: 3rem 1rem 0.75rem 1rem;
+    animation: bounce-in-top 1s ease 1;
+  }
+
+  .dropDownItem {
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  .dropDownItem a {
+    color: var(--color-text);
+    text-decoration: bold;
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+  .dropDownItem a:hover {
+    color: gray;
+  }
 
 .dropDownItem {
   text-align: center;
@@ -293,4 +335,44 @@ a:active {
 
 .smallDropDown:hover .smallDropDownContent {
   display: block;
+}
+
+
+ /* animate elements on scroll only if the user does not have reduced motion enabled */
+@media (prefers-reduced-motion: no-preference){
+  .hidden1{
+      transform: translate(0, 50%);
+      opacity: 0;
+      transform-origin: bottom;
+      transition: transform 1.5s, opacity 1.5s;
+  }
+
+  .hidden2 {
+      opacity: 0;
+      transform: translate(-25%, 0);
+      transform-origin: bottom;
+      transition: transform 2s;
+  }
+
+  .hidden1:nth-of-type(2){
+    transition: transform 1s, opacity 1s;
+  }
+
+  .hidden1:nth-of-type(3){
+      transition: transform 1.5s, opacity 1.5s;
+  }
+
+  .hidden1:nth-of-type(4){
+      transition: transform 2s, opacity 2s;
+  }
+
+  .hidden1:nth-of-type(5){
+      transition: transform 2.5s, opacity 2.5s;
+  }
+
+
+  .show1 {
+      opacity: 100;
+      transform: translate(0);
+  }
 }

@@ -1,6 +1,5 @@
 const titleimg = "/static/e.png";
 const navItemsInfo = [
-  { name: "ABOUT", link: "about/", expanded: [] },
   {
     name: "PHOTOGRAPHY",
     link: "",
@@ -14,6 +13,7 @@ const navItemsInfo = [
       { name: "Youth Against", link: "/photography/youth-against" },
     ],
   },
+  { name: "ABOUT", link: "about/", expanded: [] },
   //{ name: "painting", link: "painting/", expanded: []}
 ];
 
@@ -45,8 +45,16 @@ const titleImgHTML = () => {
 const dropDownItemsHTML = () => {
   let navItemsStr = "";
   for (const navItem of navItemsInfo) {
+    let expanded = ``;
+    for (const expandedItem of navItem.expanded) {
+      expanded += `<div class="dropDownExpanded"> 
+          <a href="${expandedItem.link}"> 
+            ${expandedItem.name} 
+          </a> 
+      </div>`;
+    }
     navItemsStr += `<div class="dropDownItem ">
-      <a href="/${navItem.link}">${navItem.name} → </a>
+      <a href="/${navItem.link}">${navItem.name} ${expanded} </a>
     </div>`;
   }
   return navItemsStr;
