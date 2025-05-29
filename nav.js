@@ -1,12 +1,14 @@
 const titleimg = "/static/e.png";
 const navItemsInfo = [ 
-  { name: "ABOUT", link: "about/" , expanded: []},
-  { name: "PHOTOGRAPHY", link: "", expanded: [ 
-    { name: "A-Ma", link: "/photography/a-ma/" }, 
-    { name: "Masks", link: "/photography/masks/" }, 
-    { name: "United we Bargain, Divided we Beg", link: "/photography/united-we-bargain-divided-we-beg" }, 
-    { name: "Youth Against", link: '/photography/youth-against' }
-  ] }
+  { name: "PHOTOGRAPHY", link: "", expanded: 
+    [ 
+      { name: "A-Ma", link: "/photography/a-ma/" }, 
+      { name: "Masks", link: "/photography/masks/" }, 
+      { name: "United we Bargain, Divided we Beg", link: "/photography/united-we-bargain-divided-we-beg" }, 
+      { name: "Youth Against", link: '/photography/youth-against' }
+    ],
+  },
+  { name: "ABOUT", link: "about/" , expanded: [] }
   //{ name: "painting", link: "painting/", expanded: []}
 ];
 
