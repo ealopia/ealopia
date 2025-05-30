@@ -7,3 +7,9 @@ git clone git@github.com:ealopia/ealopia.git
 npm i
 npm run start
 ```
+
+for those new to eleventy, i found this very helpful: https://benmyers.dev/blog/eleventy-data-cascade/
+
+<3,
+
+julie & aditi
