@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+
+<div class="content">
+    <div id="navContainer"></div>
+    <div class="content-child hidden1">
+        <div>
+            <span class="h1">{{bio.name or default.name}}</span>{{bio.longDescription}}
+            <br>
+            <br>
+            <a href="{{bio.cv}}"> See CV </a>
+            <br>
+            <br>
+            For general inquiries, please contact: <a href="mailto:{{bio.email}}"> {{bio.email}} </a>
+          </div>

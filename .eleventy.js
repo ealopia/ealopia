@@ -1,5 +1,3 @@
-import ejsPlugin from "@11ty/eleventy-plugin-ejs";
-
 export default function (eleventyConfig) {
   // Order matters!
   eleventyConfig.setInputDirectory("src");
