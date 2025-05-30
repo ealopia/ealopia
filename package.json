@@ -1,7 +1,6 @@
 {
   "name": "ealopia",
   "version": "1.0.0",
-  "main": "index.html",
   "scripts": {
     "build": "npx eleventy",
     "start": "npx eleventy --serve && npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
@@ -34,6 +33,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-plugin-ejs": "^1.0.0",
     "dotenv": "^16.5.0"
   }
 }

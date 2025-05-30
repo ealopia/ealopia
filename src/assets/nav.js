@@ -1,3 +1,5 @@
+// TODO REWRITE TO USE 11TY SHORTCUTS
+// EG NAV PLUGIN: https://www.11ty.dev/docs/data-computed/
 const titleimg = "{{logo}}"; // TODO IMPORT LOGO FROM CONTENTFUL
 const navItemsInfo = [
   {

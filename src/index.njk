@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+    <div class="content landing">
+      <div id="navContainer"></div>
+      <div class="content-child">
+        <div class="hidden1">
+          <span class="work-title">{{bio.name}}</span>
+          {{bio.shortDescription}}
+        </div>
+        <hr />
+        <div class="work-container">
+          <div class="work hidden1">
+            <div class="work-title">Photography</div>
+            <div>
+              <ul>
+                <li><a href="/photography/a-ma">A-ma</a></li>
+                <li><a href="/photography/masks">Masks</a></li>
+                <li>
+                  <a href="/photography/united-we-bargain-divided-we-beg">
+                    United we Bargain, Divided we Beg
+                  </a>
+                </li>
+                <li><a href="/photography/youth-against">Youth Against</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <div class="work hidden1">
+            <div class="work-title">Info</div>
+            <ul>
+              <li class="hidden1"><a href="{{bio.cv}}">CV</a></li>
+              <li class="hidden1"><a href="/about">About</a></li>
+            </ul>
+            <hr />
+          </div>
+        </div>
+        <br />
+      </div>
