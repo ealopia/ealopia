@@ -1,4 +1,4 @@
-const titleimg = "/static/e.png";
+const titleimg = "{{logo}}"; // TODO IMPORT LOGO FROM CONTENTFUL
 const navItemsInfo = [
   {
     name: "PHOTOGRAPHY",
