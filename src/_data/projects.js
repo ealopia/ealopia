@@ -4,68 +4,63 @@ import client from "./client.js";
 
 /**
  * 
- * @returns a promise that resolves to project info categorized by project type
+ * @returns a promise that resolves to project info
+ * 
  * does not retrieve deeply nested description or image info
+ * 
  * example return value:
-{
-  photography: [
-    {
-      title: 'A-Ma',
-      url: 'a-ma',
-      displayOrder: 1,
-      completed: true,
-      description: [Object],
-      images: [Array]
-    },
-    {
-      title: 'Masks',
-      url: 'masks',
-      displayOrder: 2,
-      completed: false,
-      description: [Object],
-      images: [Array]
-    },
-  ],
-  painting: [
-    {
-      title: 'test',
-      url: 'bootyhole',
-      displayOrder: 6,
-      completed: false,
-      description: [Object],
-      images: [Array]
-    }
-  ]
-}
+[
+  {
+    title: 'A-Ma',
+    slug: 'a-ma',
+    displayOrder: 1,
+    completed: true,
+    description: { data: {}, content: [Array], nodeType: 'document' },
+    images: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+    ],
+    category: 'photography'
+  },
+  {
+    title: 'Masks',
+    slug: 'masks',
+    displayOrder: 2,
+    completed: false,
+    description: { data: {}, content: [Array], nodeType: 'document' },
+    images: [
+      [Object], [Object], [Object],
+    ],
+    category: 'photography'
+  },
+  {
+    title: 'test',
+    slug: 'bootyhole',
+    displayOrder: 6,
+    completed: false,
+    description: { data: {}, content: [Array], nodeType: 'document' },
+    images: [ [Object] ],
+    category: 'painting'
+  }
+]
  * 
  */
-async function getAllProjects() {
+export default async function () {
   try {
     const response = await client.getEntries({
       content_type: "project",
       order: "fields.displayOrder",
     });
 
-    const projects = { photography: [] }; // always list photo projects first
-
-    response.items.forEach((project) => {
-      //  extract project types from the list of current projects
+    const projects = response.items.map((project) => {
       const category = project.metadata.concepts[0].sys.id;
-      if (!Object.hasOwn(projects, category)) {
-        projects[category] = [project.fields];
-      } else {
-        projects[category].push(project.fields);
-      }
+      return { ...project.fields, category: category };
     });
 
     return projects;
   } catch (error) {
     console.error(error);
   }
-}
-
-export default async function () {
-  getAllProjects();
 }
 
 // get array of all projects

@@ -1,7 +1,3 @@
----
-authorNames: Aditi Khare and Julie Lam
----
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,11 +6,12 @@ authorNames: Aditi Khare and Julie Lam
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="index,follow" />
-    <meta name="author" content="{{authorNames}}" />
-    <meta name="description" content="{{bio.name}} {{bio.shortDescription}}" />
+    <meta name="author" content="{{default.authors}}" />
+    <meta name="description" content="{{bio.name or default.name}} {{bio.shortDescription or default.description}}" />
     <link rel="icon" href="{{logo}}" />
+    {# TODO DEFAULT LOGO #}
 
-    <title>{{bio.name}}</title>
+    <title>{{bio.name or default.name}}</title>
 
     <!-- Renders Navigation and Logo -->
     <script src="/assets/nav.11ty.js" defer></script>

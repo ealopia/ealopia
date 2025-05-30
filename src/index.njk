@@ -5,27 +5,27 @@ layout: base.njk
       <div id="navContainer"></div>
       <div class="content-child">
         <div class="hidden1">
-          <span class="work-title">{{bio.name}} | Ethan Lan</span>
-          {{bio.shortDescription}} | (b. 2000) is a Taiwanese American visual artist specializing in photography and painting.
+          <span class="work-title">{{bio.name or default.name}}</span>
+          {{bio.shortDescription or default.description}}
         </div>
         <hr />
+
         <div class="work-container">
-          <div class="work hidden1">
-            <div class="work-title">Photography</div>
-            <div>
-              <ul>
-                <li><a href="/photography/a-ma">A-ma</a></li>
-                <li><a href="/photography/masks">Masks</a></li>
-                <li>
-                  <a href="/photography/united-we-bargain-divided-we-beg">
-                    United we Bargain, Divided we Beg
-                  </a>
-                </li>
-                <li><a href="/photography/youth-against">Youth Against</a></li>
-              </ul>
+
+        {% for projectCategory in categories %}
+            <div class="work hidden1">
+                <div class="work-title">{{projectCategory}}</div>
+                <ul>
+                    {% for project in projects %}
+                        {% if project.category == projectCategory %}
+                            <li><a href="/{{project.slug}}">{{project.title}}</a></li>    
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <hr />
             </div>
-          </div>
-          <hr />
+        {% endfor %}
+
           <div class="work hidden1">
             <div class="work-title">Info</div>
             <ul>
@@ -34,6 +34,6 @@ layout: base.njk
             </ul>
             <hr />
           </div>
+
         </div>
-        <br />
       </div>
