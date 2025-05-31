@@ -1,11 +1,14 @@
 ---
 layout: base.njk
 ---
-
 <div class="content">
-    <div id="navContainer"></div>
-    <div class="content-child hidden1">
-        <div>
+
+    <div class="sidebar">
+        <a href="/"><img class="logo" src="{{logo or default.logo}}" alt="drawing of the letter e stylized like an eye"/></a>
+    </div>
+
+    <div class="main">
+        <div class="section">
             <span class="h1">{{bio.name or default.name}}</span>{{bio.longDescription}}
             <br>
             <br>
@@ -13,4 +16,4 @@ layout: base.njk
             <br>
             <br>
             For general inquiries, please contact: <a href="mailto:{{bio.email}}"> {{bio.email}} </a>
-          </div>
+        </div>

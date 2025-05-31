@@ -8,20 +8,11 @@
     <meta name="robots" content="index,follow" />
     <meta name="author" content="{{default.authors}}" />
     <meta name="description" content="{{bio.name or default.name}} {{bio.shortDescription or default.description}}" />
-    <link rel="icon" href="{{logo}}" />
-    {# TODO DEFAULT LOGO #}
-
+    <link rel="icon" href="{{logo or default.logo}}" />
     <title>{{bio.name or default.name}}</title>
-
-    <!-- TODO Renders Navigation and Logo -->
-    {# <script src="/assets/nav.js" defer></script> #}
-
-    <!-- TODO The website stylesheet -->
     <link rel="stylesheet" href="/assets/style.css" />
-
   </head>
   <body>
-    <div class="loader">loading...</div>
     {{content | safe}}
   </body>
 </html>

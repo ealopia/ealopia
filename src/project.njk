@@ -7,39 +7,36 @@ pagination:
 permalink: "/{{ project.slug }}/"
 ---
 <div class="content">
+
+    <div class="sidebar">
+        <a href="/"><img class="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
+
+        <div class="pagination">
+            {% if pagination.href.previous %}
+            <a style="text-decoration: none;" href="{{ pagination.href.previous }}">⇠ prev</a>
+            {% else %}
+            <a style="text-decoration: none;" href="{{ pagination.href.last }}">⇠ prev</a>
+            {% endif %}
+            |
+            {% if pagination.href.next %}
+            <a style="text-decoration: none;" href="{{ pagination.href.next }}">next ⇢</a>
+            {% else %}
+            <a style="text-decoration: none;" href="{{ pagination.href.first }}">next ⇢</a>
+            {% endif %}
+        </div>
+
+        <div class="project section">
+            <h1>{{project.title}}</h1>
+            {{project.description | safe}}
+        </div>
+
+    </div> {# sidebar #}
     
-    {% if pagination.href.previous %}
-        <a style="text-decoration: none;" href="{{ pagination.href.previous }}">⇠</a>
-    {% else %}
-        <a style="text-decoration: none;" href="{{ pagination.href.last }}">⇠</a>
-    {% endif %}
-
-    {% if pagination.href.next %}
-        <a style="text-decoration: none;" href="{{ pagination.href.next }}">⇢</a>
-    {% else %}
-        <a style="text-decoration: none;" href="{{ pagination.href.first }}">⇢</a>
-    {% endif %}
-    
-    <div class="content-child">
-        <div class="flex-container">
-
-            <div>
-                <h1>{{project.title}}</h1>
-                {{project.description | safe}}
-            </div>
-
-            <div id="displayContainer">
-                <div class="display-item">
-                    <div class="img-flex-container">
-                        {% for image in project.images %}
-                            <div> 
-                                <img class="sketch-short hidden2 show1" src="{{image}}">
-                            </div>
-                        {% endfor %}
-                    </div> {# img-flex-container #}
-                </div> {# display-item #}
-            </div> {# displayContainer #}
-
-        </div> {# flex-container #}
-    </div> {# content-child #}
+    <div class="main">
+        {% for image in project.images %}
+        <div> 
+            <img src="{{image}}">
+        </div>
+        {% endfor %}
+    </div> {# main #}
 </div> {# content #}

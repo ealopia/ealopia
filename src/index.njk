@@ -3,17 +3,21 @@ layout: base.njk
 ---
 <div class="content landing">
 
-  {# TODO ADD LOGO AND/OR NAV HERE #}
+  <div class="sidebar">
+    <a href="/"><img class="logo" src="{{logo or default.logo}}" alt="drawing of the letter e stylized like an eye"/></a>
+  </div>
 
-  <div class="content-child">
-    <div class="content-section">
+  <div class="main">
+    
+    <div class="landing section">
       <span class="title">{{bio.name or default.name}}</span>
       {{bio.shortDescription or default.description}}
-    </div> {# content-section #}
+    </div> {# section #}
     <hr />
 
   {% for projectCategory in categories %}
-    <div class="content-section">
+
+    <div class="landing section">
       <div class="title">{{projectCategory}}</div>
       <ul>
           {% for project in projects %}
@@ -22,18 +26,19 @@ layout: base.njk
               {% endif %}
           {% endfor %}
       </ul>
-    </div> {# content-section #}
+    </div> {# section #}
+
     <hr />
   {% endfor %}
 
-    <div class="content-section">
+    <div class="landing section">
       <div class="title">Info</div>
       <ul>
         <li><a href="{{bio.cv}}">CV</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-    </div> {# content-section #}
+    </div> {# section #}
     <hr />
 
-  </div> {# content-child #}
+  </div> {# main #}
 </div> {# content-landing #}
