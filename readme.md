@@ -8,6 +8,17 @@ npm i
 npm run start
 ```
 
+make sure you've created your own `.env` file with the relevant secrets!
+
+namely,
+
+```
+CONTENTFUL_SPACE_ID=stuff
+CONTENTFUL_ACCESS_TOKEN=morestuff
+```
+
+currently using this calligraphy-based font which i love love love: https://github.com/Kinutafontfactory/Yuji/blob/master/documentation/documentation.pdf
+
 for those new to eleventy, i found this very helpful: https://benmyers.dev/blog/eleventy-data-cascade/
 
 <3,
