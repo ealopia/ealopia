@@ -6,26 +6,27 @@ pagination:
   alias: project
 permalink: "/{{ project.slug }}/"
 ---
-<div class="content">
+<div class="content project">
 
-    <div class="sidebar">
-        <a href="/"><img class="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
+    <div id="sidebar">
 
-        <div class="pagination">
+        <span id="pagination">
             {% if pagination.href.previous %}
-            <a style="text-decoration: none;" href="{{ pagination.href.previous }}">⇠ prev</a>
+            <a href="{{ pagination.href.previous }}">⇠ prev</a>
             {% else %}
-            <a style="text-decoration: none;" href="{{ pagination.href.last }}">⇠ prev</a>
+            <a href="{{ pagination.href.last }}">⇠ prev</a>
             {% endif %}
             |
             {% if pagination.href.next %}
-            <a style="text-decoration: none;" href="{{ pagination.href.next }}">next ⇢</a>
+            <a href="{{ pagination.href.next }}">next ⇢</a>
             {% else %}
-            <a style="text-decoration: none;" href="{{ pagination.href.first }}">next ⇢</a>
+            <a href="{{ pagination.href.first }}">next ⇢</a>
             {% endif %}
-        </div>
+        </span>
 
-        <div class="project section">
+        <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
+
+        <div class="section">
             <h1>{{project.title}}</h1>
             {{project.description | safe}}
         </div>

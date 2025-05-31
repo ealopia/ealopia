@@ -1,15 +1,16 @@
 ---
 layout: base.njk
 ---
-<div class="content">
+<div class="content landing">
 
-    <div class="sidebar">
-        <a href="/"><img class="logo" src="{{logo or default.logo}}" alt="drawing of the letter e stylized like an eye"/></a>
+    <div id="sidebar">
+        <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="drawing of the letter e stylized like an eye"/></a>
     </div>
 
     <div class="main">
         <div class="section">
-            <span class="h1">{{bio.name or default.name}}</span>{{bio.longDescription}}
+            <span class="title">{{bio.name or default.name}}</span>
+            {{bio.longDescription}}
             <br>
             <br>
             <a href="{{bio.cv}}"> See CV </a>
