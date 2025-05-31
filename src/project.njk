@@ -1,1 +1,34 @@
-{# TODO #}
+---
+layout: base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/{{ project.slug }}/"
+---
+
+<div class="content">
+    {# TODO INSERT NAV CONTAINER HERE #}
+    <div class="content-child">
+        <div class="flex-container">
+
+            <div>
+                <h1>{{project.title}}</h1>
+                {{project.description}}
+            </div>
+
+            <div id="displayContainer">
+                <div class="display-item">
+                    <div class="img-flex-container">
+                        {% for image in project.images %}
+                            <div> 
+                                <img class="sketch-short hidden2 show1" src="{{image}}">
+                            </div>
+                        {% endfor %}
+                    </div> {# img-flex-container #}
+                </div> {# display-item #}
+            </div> {# displayContainer #}
+
+        </div> {# flex-container #}
+    </div> {# content-child #}
+</div> {# content #}

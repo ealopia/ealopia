@@ -1,39 +1,39 @@
 ---
 layout: base.njk
 ---
-    <div class="content landing">
-      <div id="navContainer"></div>
-      <div class="content-child">
-        <div class="hidden1">
-          <span class="work-title">{{bio.name or default.name}}</span>
-          {{bio.shortDescription or default.description}}
-        </div>
-        <hr />
+<div class="content landing">
+  <div id="navContainer"></div>
+  <div class="content-child">
+    <div class="hidden1">
+      <span class="work-title">{{bio.name or default.name}}</span>
+      {{bio.shortDescription or default.description}}
+    </div>
+    <hr />
 
-        <div class="work-container">
+    <div class="work-container">
 
-        {% for projectCategory in categories %}
-            <div class="work hidden1">
-                <div class="work-title">{{projectCategory}}</div>
-                <ul>
-                    {% for project in projects %}
-                        {% if project.category == projectCategory %}
-                            <li><a href="/{{project.slug}}">{{project.title}}</a></li>    
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <hr />
-            </div>
-        {% endfor %}
-
-          <div class="work hidden1">
-            <div class="work-title">Info</div>
+    {% for projectCategory in categories %}
+        <div class="work hidden1">
+            <div class="work-title">{{projectCategory}}</div>
             <ul>
-              <li class="hidden1"><a href="{{bio.cv}}">CV</a></li>
-              <li class="hidden1"><a href="/about">About</a></li>
+                {% for project in projects %}
+                    {% if project.category == projectCategory %}
+                        <li><a href="/{{project.slug}}">{{project.title}}</a><i>{{"" if project.completed else " (ongoing)"}}</i></li>    
+                    {% endif %}
+                {% endfor %}
             </ul>
             <hr />
-          </div>
-
         </div>
+    {% endfor %}
+
+      <div class="work hidden1">
+        <div class="work-title">Info</div>
+        <ul>
+          <li class="hidden1"><a href="{{bio.cv}}">CV</a></li>
+          <li class="hidden1"><a href="/about">About</a></li>
+        </ul>
+        <hr />
       </div>
+
+    </div>
+  </div>
