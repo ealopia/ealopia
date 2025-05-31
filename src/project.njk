@@ -10,6 +10,8 @@ permalink: "/{{ project.slug }}/"
 
     <div id="sidebar">
 
+        <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
+
         <span id="pagination">
             {% if pagination.href.previous %}
             <a href="{{ pagination.href.previous }}">⇠ prev</a>
@@ -24,8 +26,6 @@ permalink: "/{{ project.slug }}/"
             {% endif %}
         </span>
 
-        <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
-
         <div class="section">
             <h1>{{project.title}}</h1>
             {{project.description | safe}}
@@ -33,11 +33,33 @@ permalink: "/{{ project.slug }}/"
 
     </div> {# sidebar #}
     
-    <div class="main">
+    <div id="main">
+
+        <div class="row">
+
+            <div class="col">
+            {% for image in project.images %}
+                {% if loop.index % 2 == 0 %}
+                <img src="{{image}}">
+                {% endif %}
+            {% endfor %}
+            </div> {# col #}
+
+            <div class="col">
+            {% for image in project.images %}
+                {% if loop.index % 2 == 1 %}
+                <img src="{{image}}">
+                {% endif %}
+            {% endfor %}
+            </div> {# col #}
+
+        </div> {# row #}
+
+        <div id="row-mobile">
         {% for image in project.images %}
-        <div> 
             <img src="{{image}}">
-        </div>
         {% endfor %}
+        </div> {# row-mobile #}
+
     </div> {# main #}
 </div> {# content #}
