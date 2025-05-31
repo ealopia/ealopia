@@ -83,7 +83,7 @@ body {
 /* bullet points */
 
 li::marker {
-  content: "· ";
+  content: "·  ";
   font-size: 1em;
 }
 

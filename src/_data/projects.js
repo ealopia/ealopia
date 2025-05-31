@@ -7,6 +7,7 @@ import { INLINES } from "@contentful/rich-text-types";
  * @returns a promise that resolves to project info
  * 
  * example return value:
+ * 
 [
   {
     title: 'United we Bargain, Divided we Beg',
@@ -79,12 +80,3 @@ export default async function () {
     console.error(error);
   }
 }
-
-// TODO
-// get array of all projects
-
-// func: return project types -> use to generate nav & homepage headers
-
-// func: return projects of a single type, along with URL slug, display order, and "completed" field -> use to generate nav & homepage headers
-
-// func: return data for a single project -> use to generate project page

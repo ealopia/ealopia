@@ -6,9 +6,20 @@ pagination:
   alias: project
 permalink: "/{{ project.slug }}/"
 ---
-
 <div class="content">
-    {# TODO INSERT NAV CONTAINER HERE #}
+    
+    {% if pagination.href.previous %}
+        <a style="text-decoration: none;" href="{{ pagination.href.previous }}">⇠</a>
+    {% else %}
+        <a style="text-decoration: none;" href="{{ pagination.href.last }}">⇠</a>
+    {% endif %}
+
+    {% if pagination.href.next %}
+        <a style="text-decoration: none;" href="{{ pagination.href.next }}">⇢</a>
+    {% else %}
+        <a style="text-decoration: none;" href="{{ pagination.href.first }}">⇢</a>
+    {% endif %}
+    
     <div class="content-child">
         <div class="flex-container">
 
