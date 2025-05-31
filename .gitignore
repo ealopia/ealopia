@@ -1,0 +1,11 @@
+# secrets
+.env
+
+# 11ty build output
+_site
+
+# npm modules 
+node_modules
+
+# mac file stuff
+.DS_Store

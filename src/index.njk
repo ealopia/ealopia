@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+<div class="content landing">
+
+  <div id="sidebar">
+    <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="drawing of the letter e stylized like an eye"/></a>
+  </div>
+
+  <div id="main">
+    
+    <div class="section">
+      <span class="title">{{bio.name or default.name}}</span>
+      {{bio.shortDescription or default.description}}
+    </div> {# section #}
+    <hr />
+
+  {% for projectCategory in categories %}
+
+    <div class="section">
+      <div class="title">{{projectCategory}}</div>
+      <ul>
+          {% for project in projects %}
+              {% if project.category == projectCategory %}
+                  <li><a href="/{{project.slug}}">{{project.title}}</a><i>{{"" if project.completed else " (ongoing)"}}</i></li>    
+              {% endif %}
+          {% endfor %}
+      </ul>
+    </div> {# section #}
+
+    <hr />
+  {% endfor %}
+
+    <div class="section">
+      <div class="title">Info</div>
+      <ul>
+        <li><a href="{{bio.cv}}">CV</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div> {# section #}
+    <hr />
+
+  </div> {# main #}
+</div> {# content-landing #}

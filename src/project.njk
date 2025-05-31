@@ -1,0 +1,65 @@
+---
+layout: base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/{{ project.slug }}/"
+---
+<div class="content project">
+
+    <div id="sidebar">
+
+        <a href="/"><img id="logo" src="{{logo or default.logo}}" alt="logo of the letter e stylized like an eye"/></a>
+
+        <span id="pagination">
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}">⇠ prev</a>
+            {% else %}
+            <a href="{{ pagination.href.last }}">⇠ prev</a>
+            {% endif %}
+            |
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}">next ⇢</a>
+            {% else %}
+            <a href="{{ pagination.href.first }}">next ⇢</a>
+            {% endif %}
+        </span>
+
+        <div class="section">
+            <h1>{{project.title}}</h1>
+            {{project.description | safe}}
+        </div>
+
+    </div> {# sidebar #}
+    
+    <div id="main">
+
+        <div class="row">
+
+            <div class="col">
+            {% for image in project.images %}
+                {% if loop.index % 2 == 0 %}
+                <img src="{{image}}">
+                {% endif %}
+            {% endfor %}
+            </div> {# col #}
+
+            <div class="col">
+            {% for image in project.images %}
+                {% if loop.index % 2 == 1 %}
+                <img src="{{image}}">
+                {% endif %}
+            {% endfor %}
+            </div> {# col #}
+
+        </div> {# row #}
+
+        <div id="row-mobile">
+        {% for image in project.images %}
+            <img src="{{image}}">
+        {% endfor %}
+        </div> {# row-mobile #}
+
+    </div> {# main #}
+</div> {# content #}
