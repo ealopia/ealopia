@@ -14,7 +14,7 @@ permalink: "/{{ project.slug }}/"
 
             <div>
                 <h1>{{project.title}}</h1>
-                {{project.description}}
+                {{project.description | safe}}
             </div>
 
             <div id="displayContainer">
