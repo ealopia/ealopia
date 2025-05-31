@@ -1,9 +1,4 @@
-@font-face {
-  src: url("/assets/YujiSyuku-Regular.woff") format("woff2");
-  font-family: "Yuji Syuku", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+@import url(//fonts.googleapis.com/css2?family=Yuji+Syuku:wght@400);
 
 :root {
   --color-bg: white;
@@ -22,7 +17,7 @@ body {
   text-align: center;
   opacity: 1;
   line-height: 1.5;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 /* hide scrollbars */
@@ -102,16 +97,21 @@ body {
   overflow-y: auto;
 }
 
-.landing #main {
-  padding: var(--top-spacing) var(--side-spacing) 0 0;
-}
-
 #sidebar {
   width: 33%;
   position: sticky;
   padding: var(--top-spacing) var(--side-spacing) 0 0;
   height: 100%;
   overflow-y: auto;
+}
+
+.landing #main {
+  padding: var(--top-spacing) var(--side-spacing) var(--top-spacing) 0;
+  overflow: visible;
+}
+
+.landing #sidebar {
+  overflow: visible;
 }
 
 .project #sidebar {
@@ -142,8 +142,6 @@ body {
     align-items: baseline;
     justify-content: space-between;
     margin: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 
   #main {
