@@ -259,9 +259,8 @@ figcaption {
   text-transform: capitalize;
 }
 
-li::marker {
-  content: "·  ";
-  font-size: 1em;
+li {
+  list-style-type: "·   ";
 }
 
 a {
