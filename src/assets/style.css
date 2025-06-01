@@ -200,13 +200,22 @@ body {
   flex: 1;
 }
 
-.col > * {
+.col img {
   width: 90%;
-  margin: 1rem auto;
 }
 
 #row-mobile {
   display: none;
+}
+
+figure {
+  margin: 1rem auto;
+}
+
+figcaption {
+  font-size: small;
+  max-width: 90%;
+  margin: auto;
 }
 
 @media (max-width: 700px) {
@@ -226,8 +235,11 @@ body {
     overflow-y: visible;
   }
 
-  #row-mobile > * {
+  #row-mobile img {
     width: 100%;
+  }
+
+  #row-mobile figure {
     margin: 1rem auto;
   }
 }

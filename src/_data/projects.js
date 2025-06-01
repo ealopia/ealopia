@@ -16,16 +16,10 @@ import { INLINES } from "@contentful/rich-text-types";
     completed: false,
     description: '<p>In a time when fascism and authoritarianism are on the rise, labor unions stand as one of the last defenses for democracy, pushing back against exploitation. This project is a depiction of the power of collective action, the resilience of workers, and the urgency of this moment: when workers unite, they hold the power to shape a more just future.</p>',
     images: [
-      '//images.ctfassets.net/qmmpmfi998wd/7gjbIKtJnXDIKE46wqz6fA/61042eea40f05f3aa246f90c9d39592d/ilford_hp5_plus_01_16_2025_000211000006.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/7p1CktKclih76QpwIlP1W0/f60e69273bcb48cf5c81d8129a96ce87/ilford_hp5_plus_01_16_2025_000211000017.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/6JEPbmxgkK5lSgRlC9X7SD/e7714ba0ba6e74df85cab1f8d0ed1086/ilford_hp5_plus_01_16_2025_000211000008.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/5VUZFM52z436XYfT1MSGVs/974130a1ef588097da3886c680d2f6c1/ilford_hp5_plus_01_16_2025_000211000026.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/7M7HshYcm4eBxcuB64oylk/76c1fb07194a7463caff578164c30da4/ilford_hp5_plus_01_16_2025_000211000022.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/5Xt2jQYYAUKvSXgAOMgkK6/acc570d72434ce88e9d0def05d0cfe8d/ilford_hp5_plus_01_16_2025_000211000034.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/4zebPNMBjtw4h8SvBhMh0A/a369c2354b785d3531cff5b7c2a4c535/ilford_hp5_plus_01_16_2025_000211000020.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/7BpKRS2ZNrBBCvafnlyoK8/8d1bf5cc323f86738fbb810abaef4630/ilford_hp5_plus_01_16_2025_000211000007.jpg',
-      '//images.ctfassets.net/qmmpmfi998wd/5iUR5G4GUGr2RJ6w5Lyhp5/9a42d3b5c45fbf6b03d8c7efd53d3017/ilford_hp5_plus_01_16_2025_000211000037.jpg'
-    ],
+      ['//images.ctfassets.net/qmmpmfi998wd/7gjbIKtJnXDIKE46wqz6fA/61042eea40f05f3aa246f90c9d39592d/ilford_hp5_plus_01_16_2025_000211000006.jpg', '']
+      ['//images.ctfassets.net/qmmpmfi998wd/7p1CktKclih76QpwIlP1W0/f60e69273bcb48cf5c81d8129a96ce87/ilford_hp5_plus_01_16_2025_000211000017.jpg', '']
+      ['//images.ctfassets.net/qmmpmfi998wd/6JEPbmxgkK5lSgRlC9X7SD/e7714ba0ba6e74df85cab1f8d0ed1086/ilford_hp5_plus_01_16_2025_000211000008.jpg', '']
+  ],
     category: 'photography'
   },
   {
@@ -35,8 +29,15 @@ import { INLINES } from "@contentful/rich-text-types";
     completed: false,
     description: '<p>boo tay hole</p><p><b>this should be bold</b></p><p><i>this should be italicized</i></p><p><a href="///images.ctfassets.net/qmmpmfi998wd/2D0jGxcUTtIM8ptCcgbH7M/16a59f785af86106996d9b4e90e83a0e/e.png">link to asset</a></p><p><a href="https://www.cameronsworld.net/">external link</a></p>',
     images: [
-      '//images.ctfassets.net/qmmpmfi998wd/2D0jGxcUTtIM8ptCcgbH7M/16a59f785af86106996d9b4e90e83a0e/e.png'
-    ],
+  [
+    '//images.ctfassets.net/qmmpmfi998wd/1KvaSWusEJ9p7xVbOAtj4r/e5cb5d8fc2f33984995b8e050238586e/Screenshot_2024-10-04_at_5.52.19â__PM.png',
+    'my ex drew this lol'
+  ],
+  [
+    '//images.ctfassets.net/qmmpmfi998wd/3xtm0PHIBMHG8Jk96TNPvA/9b1af854268b0344a29feafced1457d9/Screenshot_2025-02-13_at_12.30.17â__PM.png',
+    'i had a thought and now i must execute. testing captions really quickly'
+  ]
+],
     category: 'painting'
   }
 ]
@@ -71,7 +72,11 @@ export default async function () {
     // extract project image urls
     projects.forEach((project) => {
       project.images = project.images.map((img) => {
-        return img.fields.file.url;
+        if ("description" in img.fields) {
+          return [img.fields.file.url, img.fields.description];
+        } else {
+          return [img.fields.file.url, ""];
+        }
       });
     });
 

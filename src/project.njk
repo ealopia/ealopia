@@ -40,7 +40,10 @@ permalink: "/{{ project.slug }}/"
             <div class="col">
             {% for image in project.images %}
                 {% if loop.index % 2 == 0 %}
-                <img src="{{image}}">
+                <figure>
+                    <img src="{{image[0]}}">
+                    <figcaption>{{image[1]}}</figcaption>
+                </figure>
                 {% endif %}
             {% endfor %}
             </div> {# col #}
@@ -48,7 +51,10 @@ permalink: "/{{ project.slug }}/"
             <div class="col">
             {% for image in project.images %}
                 {% if loop.index % 2 == 1 %}
-                <img src="{{image}}">
+                <figure>
+                    <img src="{{image[0]}}">
+                    <figcaption>{{image[1]}}</figcaption>
+                </figure>
                 {% endif %}
             {% endfor %}
             </div> {# col #}
@@ -57,7 +63,10 @@ permalink: "/{{ project.slug }}/"
 
         <div id="row-mobile">
         {% for image in project.images %}
-            <img src="{{image}}">
+            <figure>
+                <img src="{{image[0]}}">
+                <figcaption>{{image[1]}}</figcaption>
+            </figure>
         {% endfor %}
         </div> {# row-mobile #}
 
