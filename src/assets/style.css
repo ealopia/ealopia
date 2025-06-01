@@ -32,11 +32,15 @@ body {
 }
 
 .landing #logo {
-  animation: flip 4s ease-in-out infinite;
+  animation: flip 6s ease-in-out infinite;
+}
+
+.landing #logo:hover {
+  animation-play-state: paused;
 }
 
 @keyframes flip {
-  0% {
+  50% {
     transform: rotateY(0deg);
   }
   100% {
