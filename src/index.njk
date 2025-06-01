@@ -18,7 +18,7 @@ layout: base.njk
   {% for projectCategory in categories %}
 
     <div class="section">
-      <div class="title">{{projectCategory}}</div>
+      <div class="title capitalize">{{projectCategory}}</div>
       <ul>
           {% for project in projects %}
               {% if project.category == projectCategory %}
@@ -41,4 +41,4 @@ layout: base.njk
     <hr />
 
   </div> {# main #}
-</div> {# content-landing #}
+</div> {# content landing #}

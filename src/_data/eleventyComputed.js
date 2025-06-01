@@ -1,4 +1,6 @@
 import projects from "./projects.js";
+import bio from "./bio.js";
+import { marked } from "marked";
 
 export default {
   projects: async (data) => {
@@ -12,5 +14,10 @@ export default {
       }
     });
     return projectCategories;
+  },
+  bio: async (data) => {
+    const response = await bio();
+    response.longDescription = marked.parse(response.longDescription);
+    return response;
   },
 };
