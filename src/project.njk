@@ -39,7 +39,7 @@ permalink: "/{{ project.slug }}/"
 
             <div class="col">
             {% for image in project.images %}
-                {% if loop.index % 2 == 0 %}
+                {% if loop.index % 2 == 1 %}
                 <figure>
                     <img src="{{image[0]}}">
                     <figcaption>{{image[1]}}</figcaption>
@@ -50,7 +50,7 @@ permalink: "/{{ project.slug }}/"
 
             <div class="col">
             {% for image in project.images %}
-                {% if loop.index % 2 == 1 %}
+                {% if loop.index % 2 == 0 %}
                 <figure>
                     <img src="{{image[0]}}">
                     <figcaption>{{image[1]}}</figcaption>
