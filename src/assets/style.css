@@ -32,7 +32,7 @@ body {
 }
 
 .landing #logo {
-  animation: flip 6s ease-in-out infinite;
+  animation: flip 5s ease-in-out infinite;
 }
 
 .landing #logo:hover {
@@ -40,7 +40,7 @@ body {
 }
 
 @keyframes flip {
-  50% {
+  60% {
     transform: rotateY(0deg);
   }
   100% {
@@ -50,13 +50,14 @@ body {
 
 #logo:hover {
   transform: scale(1.1);
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
 
 .project #logo {
   width: 50%;
   float: left;
+  translate: -2rem -0.6rem;
 }
 
 #pagination {
@@ -103,7 +104,7 @@ body {
 #sidebar {
   width: 33%;
   position: sticky;
-  padding: var(--top-spacing) var(--side-spacing) 0 0;
+  padding: var(--top-spacing) calc(var(--side-spacing) - 0.7rem) 0 0.7rem;
   height: 100%;
   overflow-y: auto;
 }
@@ -161,8 +162,9 @@ body {
   }
 
   #logo {
-    float: left;
-    width: 60%;
+    /* float: left; */
+    width: 70%;
+    translate: -0.5rem;
   }
 
   #pagination {
