@@ -141,7 +141,7 @@ body {
   clear: both;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .content {
     width: 90%;
     flex-direction: column;
@@ -225,7 +225,7 @@ figcaption {
   margin: auto;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .row {
     display: none;
   }
